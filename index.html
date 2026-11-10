@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#1e1e1e">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="PyCode">
+  <link rel="manifest" href="manifest.json">
+  <title>PyCode - Python on the Go</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Ace Editor -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.7/ace.js"></script>
+  <!-- Pyodide -->
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <button id="files-btn" title="Files">📁</button>
+      <h1>PyCode</h1>
+    </div>
+    <div class="header-right">
+      <select id="examples">
+        <option value="">Examples</option>
+        <option value="hello">Hello World</option>
+        <option value="math">Math Fun</option>
+        <option value="loop">Loop Example</option>
+        <option value="function">Function</option>
+      </select>
+      <button id="save-btn" title="Save">💾</button>
+      <button id="run-btn">▶ Run</button>
+    </div>
+  </header>
+
+  <div id="editor-container">
+    <div id="editor"></div>
+  </div>
+
+  <div id="console-panel">
+    <div class="console-header">
+      <span>Console</span>
+      <button id="clear-console">Clear</button>
+    </div>
+    <pre id="console-output"></pre>
+  </div>
+
+  <!-- File Explorer Modal -->
+  <div id="file-modal" class="modal">
+    <div class="modal-content">
+      <h2>Files</h2>
+      <div id="file-list"></div>
+      <div class="file-actions">
+        <input type="text" id="new-filename" placeholder="new_file.py">
+        <button id="new-file-btn">New</button>
+        <button id="close-modal">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
